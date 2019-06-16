@@ -1,22 +1,55 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Log-in page
+  Tapp log-in
 {% endblock %}
 
 {% block beforeContent %}
-
+  <section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description" style="background-image: url('https://www.nhs.uk/static/nhsuk_shared/img/homepage/hero-2.jpg');">
+    <div class="nhsuk-hero__overlay">
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-hero-content">
+              <h1 class="nhsuk-u-margin-bottom-3">Welcome to Tapp</h1>
+              <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Helping you take control of your health and wellbeing.</p>
+              <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 {% endblock %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds">
 
+      <form action="/patient/home" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Patient log-in
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="patient-username">
+              Username
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="patient-username" name="patient-username" value="{{ data['patient-username'] }}" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="patient-password">
+              Password
+            </label>
+            <input type="password" class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="patient-password" value="{{ data['patient-password'] }}" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+      </form>
 
-
-    </div>  
-
+    </div>
   </div>
 {% endblock %}

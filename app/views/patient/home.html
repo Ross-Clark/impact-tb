@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Blank template - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  <section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">{{ data['patient-username'] }}</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Helping you take control of your health and wellbeing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+          {{ promo({
+            "href": "patient/medicines",
+            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "heading": "My Medicines",
+            "description": "View information on my medicines"
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+          {{ promo({
+            "href": "patient/timeline",
+            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "heading": "My Journey",
+            "description": "View your journey throught treatment"
+          }) }}
+        </div>
+      </div>
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+          {{ promo({
+            "href": "patient/faq",
+            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "heading": "Concerns?",
+            "description": "View information on my medicines"
+          }) }}
+        </div>
+        <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+          {{ promo({
+            "href": "patient/orgs",
+            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "heading": "Supporting You",
+            "description": "Connecting you with organisations that help people with tuberculosis"
+          }) }}
+        </div>
+      </div>
+
+
+    </div>
+{% endblock %}
