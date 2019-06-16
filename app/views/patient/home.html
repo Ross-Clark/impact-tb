@@ -21,45 +21,41 @@
 {% endblock %}
 
 {% block content %}
-    <div class="nhsuk-grid-row">
-
       <div class="nhsuk-grid-row nhsuk-promo-group">
         <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
           {{ promo({
-            "href": "patient/medicines",
-            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "href": "medicines",
+            "imgURL": "/images/medicine.png",
             "heading": "My Medicines",
             "description": "View information on my medicines"
           }) }}
         </div>
         <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
           {{ promo({
-            "href": "patient/timeline",
-            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "href": "timeline",
+            "imgURL": "/images/compass.png",
             "heading": "My Journey",
-            "description": "View your journey throught treatment"
+            "description": "View information on my medicines"
           }) }}
         </div>
       </div>
       <div class="nhsuk-grid-row nhsuk-promo-group">
         <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
           {{ promo({
-            "href": "patient/faq",
-            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "href": "faq",
+            "imgURL": "/images/concern.png",
             "heading": "Concerns?",
             "description": "View information on my medicines"
           }) }}
         </div>
         <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
           {{ promo({
-            "href": "patient/orgs",
-            "imgURL": "https://www.nhs.uk/static/nhsuk_shared/img/homepage/give-blood.png",
+            "href": "orgs",
+            "imgURL": "/images/support.png",
             "heading": "Supporting You",
             "description": "Connecting you with organisations that help people with tuberculosis"
           }) }}
         </div>
       </div>
 
-
-    </div>
 {% endblock %}

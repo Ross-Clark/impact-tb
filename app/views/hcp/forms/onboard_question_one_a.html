@@ -1,0 +1,127 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Example - passing data from page to page - step 5
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/docs",
+        text: "Home"
+      }
+    ],
+    href: "/docs/how-tos",
+    text: "How to guides"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h2>
+        Patient Details
+      </h2>
+
+      <dl class="nhsuk-summary-list">
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Jack
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/examples/passing-data/passing-data-question-name">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Contact preference
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Phone
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/examples/passing-data/passing-data-question-contact">
+              Change<span class="nhsuk-u-visually-hidden"> contact preference</span>
+            </a>
+          </dd>        
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Results and interventions
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <ul class="nhsuk-list nhsuk-u-margin-bottom-1">
+              {% for item in data['condition'] %}
+                <li>{{ item }}</li>
+              {% else %}
+                <li>No conditions selected</li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/examples/passing-data/passing-data-question-conditions">
+              Change<span class="nhsuk-u-visually-hidden"> conditions</span>
+            </a>
+          </dd>
+        </div>
+        
+      </dl>
+
+      <h2>
+        Results and Support measures
+      </h2>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Do you understand your diagnosis of TB?
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+          <dd class="nhsuk-summary-list__value">
+            <a href="#">View the following video to help understand your condition </a>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/examples/passing-data/passing-data-question-name">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            I understand how to take my TB medicine
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="nhsuk-summary-list__value">
+            Great! continuing to take your medication is helping cure your TB!
+            <br>
+            If you have any questions your TB nurse can be contactes on telephone or email
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="/examples/passing-data/passing-data-question-name">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      
+        
+      </dl>
+
+    </div>
+  </div>
+{% endblock %}
